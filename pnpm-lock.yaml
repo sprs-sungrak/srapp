@@ -11,6 +11,9 @@ dependencies:
   '@capacitor/core':
     specifier: ^5.5.0
     version: 5.5.0
+  '@capacitor/live-updates':
+    specifier: ^0.1.0
+    version: 0.1.0(@capacitor/core@5.5.0)
   next:
     specifier: 13.5.4
     version: 13.5.4(react-dom@18.2.0)(react@18.2.0)
@@ -92,6 +95,14 @@ packages:
     resolution: {integrity: sha512-w59io0ctwnb7JRng7yO2H0YLHG8uz7XARUugRfp5aYTNiG55FqdSmSMOOqGCMPRg4sEnKjJTvAa4ImCYh3Kk1w==}
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /@capacitor/live-updates@0.1.0(@capacitor/core@5.5.0):
+    resolution: {integrity: sha512-mXmaZ4vFhWJLlwJDeXC543MFugSqyfA3MMqz0FBjHw5vjCRPemVIz7dro6HdcAIgneL5r0V+D2TzXsDxE1kJhA==}
+    peerDependencies:
+      '@capacitor/core': ^5.0.0
+    dependencies:
+      '@capacitor/core': 5.5.0
     dev: false
 
   /@ionic/cli-framework-output@2.2.6:
