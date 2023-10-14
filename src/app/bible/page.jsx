@@ -1,5 +1,5 @@
 const BiblePage = () => {
-  return <>bible page</>
+  return <main>bible page</main>
 }
 
 export default BiblePage

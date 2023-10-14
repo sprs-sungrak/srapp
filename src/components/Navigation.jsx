@@ -11,6 +11,8 @@ import {
 
 import { IonReactRouter } from '@ionic/react-router'
 import { Route, Redirect } from 'react-router-dom'
+import { usePathname } from 'next/navigation'
+import NavbarTab from '@/components/NavbarTab'
 
 import HomePage from '@/app/home/page'
 import WorshipPage from '@/app/worship/page'
@@ -19,10 +21,14 @@ import ContentsPage from '@/app/contents/page'
 import MenuPage from '@/app/menu/page'
 
 const Navigation = () => {
+  const pathname = usePathname()
+  console.log(pathname)
+
   return (
     <IonApp>
       <IonReactRouter>
-        <IonTabs className="bg-red-300">
+        <IonTabs>
+          {/* 라우터 설정 */}
           <IonRouterOutlet>
             <Redirect exact path="/" to="/home" />
             <Route path="/home" render={() => <HomePage />} exact={true} />
@@ -40,44 +46,71 @@ const Navigation = () => {
             <Route path="/menu" render={() => <MenuPage />} exact={true} />
           </IonRouterOutlet>
 
+          {/* 하단 탭 UI */}
           <IonTabBar
             slot="bottom"
-            className="flex justify-between h-10 divide-x"
+            className="flex justify-between h-16 rounded-xl border-t border-gray-300"
           >
-            <IonTabButton
+            <NavbarTab path="home" icon="/icons/navbar/home.svg" label="홈" />
+            {/* <IonTabButton
               tab="home"
               href="/home"
-              className="w-1/5 flex items-center justify-center"
+              className="w-1/5 flex flex-col items-center justify-center"
             >
-              <IonLabel className="">Home</IonLabel>
-            </IonTabButton>
+              <div className="flex justify-center">
+                <img src="/icons/navbar/home.svg" />
+              </div>
+              <IonLabel className="w-full block text-sm text-center">
+                홈
+              </IonLabel>
+            </IonTabButton> */}
             <IonTabButton
               tab="worship"
               href="/worship"
-              className="w-1/5 flex items-center justify-center"
+              className="w-1/5 flex flex-col items-center justify-center"
             >
-              <IonLabel className="">Worship</IonLabel>
+              <div className="flex justify-center">
+                <img src="/icons/navbar/worship.svg" />
+              </div>
+              <IonLabel className="w-full block text-sm text-center">
+                예배
+              </IonLabel>
             </IonTabButton>
             <IonTabButton
               tab="bible"
               href="/bible"
-              className="w-1/5 flex items-center justify-center"
+              className="w-1/5 flex flex-col items-center justify-center"
             >
-              <IonLabel className="">Bible</IonLabel>
+              <div className="flex justify-center">
+                <img src="/icons/navbar/bible.svg" />
+              </div>
+              <IonLabel className="w-full block text-sm text-center">
+                성경
+              </IonLabel>
             </IonTabButton>
             <IonTabButton
               tab="contents"
               href="/contents"
-              className="w-1/5 flex items-center justify-center"
+              className="w-1/5 flex flex-col items-center justify-center"
             >
-              <IonLabel className="">Contents</IonLabel>
+              <div className="flex justify-center">
+                <img src="/icons/navbar/contents.svg" />
+              </div>
+              <IonLabel className="w-full block text-sm text-center">
+                콘텐츠
+              </IonLabel>
             </IonTabButton>
             <IonTabButton
               tab="menu"
               href="/menu"
-              className="w-1/5 flex items-center justify-center"
+              className="w-1/5 flex flex-col items-center justify-center"
             >
-              <IonLabel className="">Menu</IonLabel>
+              <div className="flex justify-center">
+                <img src="/icons/navbar/menu.svg" />
+              </div>
+              <IonLabel className="w-full block text-sm text-center">
+                전체
+              </IonLabel>
             </IonTabButton>
           </IonTabBar>
         </IonTabs>

@@ -1,5 +1,5 @@
 const WorshipPage = () => {
-  return <>worship page</>
+  return <main>worship page</main>
 }
 
 export default WorshipPage

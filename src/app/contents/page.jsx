@@ -1,5 +1,5 @@
 const ContentsPage = () => {
-  return <>contents page</>
+  return <main>contents page</main>
 }
 
 export default ContentsPage
